@@ -23,7 +23,6 @@ def send_file(connection, file_name):
     file_name = './server_place/'+ file_name
     file_size = os.stat(file_name).st_size
     with open(file_name, 'rb') as file:
-
         State = "slow_start"
         MSS = 1024
         cwnd = 1 * MSS     # cwnd initialization 1 MSS = 1KB
@@ -40,7 +39,6 @@ def send_file(connection, file_name):
         while( (file_size - recv_size) > 0 ):
             if (file_size - recv_size) < cwnd:
                 cwnd = file_size - recv_size
-
             data = file.read(cwnd)
             recv_size += cwnd
             cwnd_str = str(cwnd)
@@ -122,7 +120,6 @@ def multi_thread_client(connection, client_info):
     send_file(connection, file_name)
     print("Finish sending ",file_name," to ",client_info[0]," : ",client_info[1])
     connection.close()
-
 
 while True:
     client, cli_IP = server.accept()

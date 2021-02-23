@@ -36,7 +36,6 @@ def get_file(client, type):
     recv_file.close()
     print("Get a file from server")
 
-
 first_message = client.recv(18)
 print(first_message)
 
