@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+# Unused File
+clients
+server_place
+
 # C extensions
 *.so
 
