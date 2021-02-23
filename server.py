@@ -101,7 +101,6 @@ def send_file(connection, file_name):
             elif State == "congestionAvoidence":
                 if case == "new_ack":
                     cwnd = cwnd + MSS * (MSS / cwnd)
-                    #cwnd = cwnd
                     dup_ack = 0
                 elif case == "duplicate_ack":
                     dup_ack += 1
@@ -133,9 +132,3 @@ while True:
     ThreadCount += 1
 server.close()
 
-
-#print("Server get:",data.decode('utf-8'))
-#connection.sendall(str.encode("HI"))
-
-
-# FSM
